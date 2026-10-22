@@ -13,8 +13,6 @@ pipeline{
             }
 
         }
-    }
-    stages{
         stage("Dotnet build"){
             when{
                 anyOf {
@@ -25,10 +23,7 @@ pipeline{
             steps{
                 bat "dotnet build --no-restore"
             }
-
         }
-    }
-    stages{
         stage("Dotnet test"){
             when{
                 anyOf {
